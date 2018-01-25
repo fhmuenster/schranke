@@ -1,0 +1,51 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <variables></variables>
+  <block type="txt" id="9EDt.(c0rQ}pBA6UzqT6" x="196" y="25">
+    <mutation>
+      <port name="Input_0" type="Input"></port>
+      <port name="Input_1" type="Input"></port>
+      <port name="Input_2" type="Input"></port>
+      <port name="Input_3" type="Input"></port>
+      <port name="Output_0" type="Output"></port>
+      <port name="Output_2" type="Output"></port>
+      <port name="Output_3" type="Output"></port>
+      <port name="Output_1" type="Output"></port>
+      <port name="Motor_0" type="Motor"></port>
+      <port name="Counter_0" type="Counter"></port>
+    </mutation>
+    <field name="controllerName">txtController</field>
+    <field name="dropdown_Input_0">I2</field>
+    <field name="dropdown_Input_1">I3</field>
+    <field name="dropdown_Input_2">I1</field>
+    <field name="dropdown_Input_3">I4</field>
+    <field name="dropdown_Output_0">O5</field>
+    <field name="dropdown_Output_2">O7</field>
+    <field name="dropdown_Output_3">O3</field>
+    <field name="dropdown_Output_1">O4</field>
+    <field name="dropdown_Motor_0">M1</field>
+    <field name="dropdown_Counter_0">C1</field>
+    <value name="Input_0">
+      <block type="pushbutton" id="Km|2r+Jaq)fPy-gM~gg0"></block>
+    </value>
+    <value name="Input_1">
+      <block type="pushbutton" id="MMo.5e6J2q@hjvC@VqKX"></block>
+    </value>
+    <value name="Input_2">
+      <block type="lightsensor" id="k/iY).,eUC%alx}ymn#5"></block>
+    </value>
+    <value name="Output_0">
+      <block type="txtlamp" id="Gw3d$a;n}7n_z8{m!2s="></block>
+    </value>
+    <value name="Output_2">
+      <block type="txtlamp" id="y5qw?8)_H2WQ7HrDt{k{"></block>
+    </value>
+    <value name="Output_3">
+      <block type="txtlamp" id="dkl79(ty)!-@cT!n]~Ep"></block>
+    </value>
+    <value name="Motor_0">
+      <block type="encodermotor" id="s$KSF.LDHRJm`W@2dT^J">
+        <field name="EncoderMotorCounter">none</field>
+      </block>
+    </value>
+  </block>
+</xml>

@@ -1,0 +1,283 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <variables>
+    <variable type="" id="[)~MMT=dK_G,UsS@w?DP">speed</variable>
+  </variables>
+  <block type="variables_set" id="-zAlBs/o.3s/lBGT]r!8" x="55" y="12">
+    <field name="VAR" id="[)~MMT=dK_G,UsS@w?DP" variabletype="">speed</field>
+    <value name="VALUE">
+      <block type="math_number" id="2tp;/*sgfk3k$sD7lL)1">
+        <field name="NUM">500</field>
+      </block>
+    </value>
+    <next>
+      <block type="txtLampOn" id="3b[aBo!nnAxDLI[L`N89">
+        <field name="output_ports">O3</field>
+        <value name="intensity">
+          <block type="math_number" id="KXJ#$yA5?|?R{3mYEO^i">
+            <field name="NUM">512</field>
+          </block>
+        </value>
+        <next>
+          <block type="txtLampOn" id="]RH^Ev6[iHL#n6#:Qm}|">
+            <field name="output_ports">O5</field>
+            <value name="intensity">
+              <block type="math_number" id="#4=.!#,=4BUzyKBKb^A}">
+                <field name="NUM">254</field>
+              </block>
+            </value>
+            <next>
+              <block type="txtLampOn" id="WR#aV2dORFUES}]0nWRg">
+                <field name="output_ports">O7</field>
+                <value name="intensity">
+                  <block type="math_number" id="db!q.ozs!p+EaySXBF3N">
+                    <field name="NUM">254</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="sleep" id="fWrEOQ5skcG3ik!%748d">
+                    <value name="amount">
+                      <block type="math_number" id="nfY/~2)6nEo##%$fOX1e">
+                        <field name="NUM">3</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="procedures_callnoreturn" id="*O;|2Ik1W2R%GP.+)/v2">
+                        <mutation name="schranke_zu"></mutation>
+                        <next>
+                          <block type="controls_whileUntil" id="VLXdF+)pXZzc:cE!|wUy">
+                            <field name="MODE">WHILE</field>
+                            <value name="BOOL">
+                              <block type="logic_boolean" id="eSauk=s:sFt7i$3gGbVg">
+                                <field name="BOOL">TRUE</field>
+                              </block>
+                            </value>
+                            <statement name="DO">
+                              <block type="controls_if" id="jfnj9(2PjM#efT:qM+k8">
+                                <mutation else="1"></mutation>
+                                <value name="IF0">
+                                  <block type="logic_negate" id="Y?~Z6H0MkEI~e=_a@k?b">
+                                    <value name="BOOL">
+                                      <block type="txtButtonGetState" id="!M7a9R9l*[-be#k6Hd2$">
+                                        <field name="output_ports">I1</field>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                                <statement name="DO0">
+                                  <block type="procedures_callnoreturn" id="Tgqm=zp$lLd~h1?p@Zp}">
+                                    <mutation name="schranke_auf"></mutation>
+                                  </block>
+                                </statement>
+                                <statement name="ELSE">
+                                  <block type="controls_if" id="[6+i6h^_aZ#,|k2=+#yb">
+                                    <value name="IF0">
+                                      <block type="txtButtonGetState" id="hxj#|KY()ID,f8mfXsP^">
+                                        <field name="output_ports">I3</field>
+                                      </block>
+                                    </value>
+                                    <statement name="DO0">
+                                      <block type="sleep" id="f4XQEt3a=XdVwxC9G8eZ">
+                                        <value name="amount">
+                                          <block type="math_number" id="-7sM^W+t]CH;%$uC`r8N">
+                                            <field name="NUM">5</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </statement>
+                                    <next>
+                                      <block type="controls_if" id="nGm);$UZ:JVifFB$*t)p">
+                                        <value name="IF0">
+                                          <block type="txtButtonGetState" id="3r?`=1C5Dmr]+`lc:%w}">
+                                            <field name="output_ports">I1</field>
+                                          </block>
+                                        </value>
+                                        <statement name="DO0">
+                                          <block type="procedures_callnoreturn" id="$LkFp/uX2|G^rf[|fNx]">
+                                            <mutation name="schranke_zu"></mutation>
+                                          </block>
+                                        </statement>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </statement>
+                              </block>
+                            </statement>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+  <block type="procedures_defnoreturn" id="+5yNP[.0.*QD#kB]kARl" x="49" y="495">
+    <field name="NAME">schranke_auf</field>
+    <comment pinned="false" h="80" w="160">oeffnet die Schranke</comment>
+    <statement name="STACK">
+      <block type="controls_if" id="gIyJmA]c,tFKT?eLC:oA">
+        <value name="IF0">
+          <block type="logic_negate" id="Hq}+V1~E4#^Y)b^mf!p2">
+            <value name="BOOL">
+              <block type="txtButtonGetState" id="]yM8Lje0xNDX^q7=6m`@">
+                <field name="output_ports">I3</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <statement name="DO0">
+          <block type="txtMotorDriveSpeed" id=";70_sk7cRoH)E$oHEYrA">
+            <field name="output_ports">M1</field>
+            <value name="speed">
+              <block type="math_arithmetic" id="NF./anX`8x$Lk:`y1^lW">
+                <field name="OP">MULTIPLY</field>
+                <value name="A">
+                  <shadow type="math_number" id="jJ{GLnh6:x1,mY~5h=f?">
+                    <field name="NUM">1</field>
+                  </shadow>
+                  <block type="math_number" id="x[u*414H]t}S,rY%[cf`">
+                    <field name="NUM">-1</field>
+                  </block>
+                </value>
+                <value name="B">
+                  <shadow type="math_number" id=",alSiSR`zL/`BLm*mJC7">
+                    <field name="NUM">1</field>
+                  </shadow>
+                  <block type="variables_get" id="vgVMD%(G*f*M@CfC{~4q">
+                    <field name="VAR" id="[)~MMT=dK_G,UsS@w?DP" variabletype="">speed</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <next>
+              <block type="controls_whileUntil" id="J#)l2FkDPVQ;8dC;Bbxo">
+                <field name="MODE">UNTIL</field>
+                <value name="BOOL">
+                  <block type="txtButtonGetState" id="v2I0*]#nSSmz[O;J`/0o">
+                    <field name="output_ports">I3</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="txtMotorStop" id="L%J/A[#UdWuW|k*NMNJr">
+                    <field name="output_ports">M1</field>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+        <next>
+          <block type="txtLampOn" id="Z|W%a`LL[TN27*H0*OE=">
+            <field name="output_ports">O5</field>
+            <value name="intensity">
+              <block type="math_number" id="@m!3,~?SI*qGGnQ=CtF=">
+                <field name="NUM">0</field>
+              </block>
+            </value>
+            <next>
+              <block type="txtLampOn" id="Jr=d_IV3cxAx:Ju.}.:7">
+                <field name="output_ports">O7</field>
+                <value name="intensity">
+                  <block type="math_number" id="#2Etu3Ye!.~!06}SE/97">
+                    <field name="NUM">254</field>
+                  </block>
+                </value>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="procedures_defnoreturn" id="_6#8aR{9BR8QLdWlY..h" x="48" y="814">
+    <field name="NAME">schranke_zu</field>
+    <comment pinned="false" h="80" w="160">schliesst die schranke</comment>
+    <statement name="STACK">
+      <block type="txtLampOn" id="o:tNG}A9y@D[YoY}ls]I">
+        <field name="output_ports">O7</field>
+        <value name="intensity">
+          <block type="math_number" id="$E}7!TFVL5l@JI}/j*ob">
+            <field name="NUM">0</field>
+          </block>
+        </value>
+        <next>
+          <block type="txtLampOn" id="em=F/Jxc)B.(u:0528gT">
+            <field name="output_ports">O5</field>
+            <value name="intensity">
+              <block type="math_number" id="zZ}k,c9IaUS_GQ|F$4wo">
+                <field name="NUM">254</field>
+              </block>
+            </value>
+            <next>
+              <block type="sleep" id="1Wt*K!bb(%FUEX6MEHEX">
+                <value name="amount">
+                  <block type="math_number" id="sq3a?x(qTn{VGS,e?UBB">
+                    <field name="NUM">1</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="controls_if" id="5Sn]x+dTn)r[6}#03`=o">
+                    <value name="IF0">
+                      <block type="logic_negate" id="^{_G^B/`FX;4sbZZyC~v">
+                        <value name="BOOL">
+                          <block type="txtButtonGetState" id="/_!L##;8vWS%plIJHOMD">
+                            <field name="output_ports">I2</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <statement name="DO0">
+                      <block type="txtMotorDriveSpeed" id="Hy5/ewQ@fc=~(jr0g]Gr">
+                        <field name="output_ports">M1</field>
+                        <value name="speed">
+                          <block type="math_arithmetic" id="G(Ye:nG%r$q@c2_ReL{M">
+                            <field name="OP">MULTIPLY</field>
+                            <value name="A">
+                              <shadow type="math_number" id=":cas}*c%sMvvv2.}~@KX">
+                                <field name="NUM">1</field>
+                              </shadow>
+                              <block type="math_number" id="R9OUKpylnhMsZj4.?gs^">
+                                <field name="NUM">1</field>
+                              </block>
+                            </value>
+                            <value name="B">
+                              <shadow type="math_number" id=",alSiSR`zL/`BLm*mJC7">
+                                <field name="NUM">1</field>
+                              </shadow>
+                              <block type="variables_get" id="ZN_|I;qhL+Dm^`#%8}0O">
+                                <field name="VAR" id="[)~MMT=dK_G,UsS@w?DP" variabletype="">speed</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="controls_whileUntil" id="sATWmELH8W};v9[ebodf">
+                            <field name="MODE">UNTIL</field>
+                            <value name="BOOL">
+                              <block type="txtButtonGetState" id="Ki|igLJ[=nn~5o7DN}XF">
+                                <field name="output_ports">I2</field>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="txtMotorStop" id="Ys9(/Kt3KgSzV[+).K{l">
+                                <field name="output_ports">M1</field>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </statement>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>
